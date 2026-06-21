@@ -7,7 +7,11 @@ export const validateRegistrationData = (
   data: User,
   userType: 'user' | 'seller',
 ) => {
-  const { name, email, password, phoneNumber, country } = data;
+  const name = data.name?.trim();
+  const email = data.email?.trim();
+  const password = data.password?.trim();
+  const phoneNumber = data.phoneNumber?.trim();
+  const country = data.country?.trim();
   if (
     !name ||
     !email ||

@@ -36,11 +36,11 @@ const limiter = rateLimit({
 
 app.use(limiter);
 
-app.use('/', proxy('http://localhost:8080'));
-
 app.get('/gateway-health', (req, res) => {
   res.send({ healthy: 'Ok' });
 });
+
+app.use('/', proxy('http://localhost:8080'));
 
 const port = process.env.PORT || 8888;
 const server = app.listen(port, () => {
