@@ -5,6 +5,7 @@ import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
+import chalk from 'chalk';
 dotenv.config();
 
 const app = express();
@@ -43,6 +44,10 @@ app.get('/gateway-health', (req, res) => {
 
 const port = process.env.PORT || 8888;
 const server = app.listen(port, () => {
-  console.log(`Listening at http://localhost:${port}/api`);
+  console.log(
+    chalk.gray(`[ api-gateway ] Listening at http://localhost:${port}/api`),
+  );
 });
-server.on('error', console.error);
+server.on('error', (err) =>
+  console.error(chalk.red(`[ api-gateway ] Server error: ${err}`)),
+);

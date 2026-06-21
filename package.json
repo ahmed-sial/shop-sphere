@@ -7,14 +7,18 @@
   },
   "private": true,
   "dependencies": {
+    "@prisma/client": "^7.8.0",
     "axios": "^1.18.0",
+    "chalk": "^5.6.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.1.0",
     "express-http-proxy": "^2.1.2",
     "express-rate-limit": "^8.5.2",
+    "mongodb": "^7.3.0",
     "morgan": "^1.11.0",
+    "prisma": "^7.8.0",
     "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
